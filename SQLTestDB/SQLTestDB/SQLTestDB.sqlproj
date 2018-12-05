@@ -14,7 +14,7 @@
     </RootPath>
     <RootNamespace>SQLTestDB</RootNamespace>
     <AssemblyName>SQLTestDB</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -23,6 +23,8 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -57,5 +59,35 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\AbpAuditLogs.sql" />
+    <Build Include="dbo\Tables\AbpBackgroundJobs.sql" />
+    <Build Include="dbo\Tables\AbpFeatures.sql" />
+    <Build Include="dbo\Tables\AbpEditions.sql" />
+    <Build Include="dbo\Tables\AbpLanguages.sql" />
+    <Build Include="dbo\Tables\AbpLanguageTexts.sql" />
+    <Build Include="dbo\Tables\AbpNotifications.sql" />
+    <Build Include="dbo\Tables\AbpNotificationSubscriptions.sql" />
+    <Build Include="dbo\Tables\AbpOrganizationUnits.sql" />
+    <Build Include="dbo\Tables\AbpPermissions.sql" />
+    <Build Include="dbo\Tables\AbpRoles.sql" />
+    <Build Include="dbo\Tables\AbpUsers.sql" />
+    <Build Include="dbo\Tables\AbpUserClaims.sql" />
+    <Build Include="dbo\Tables\AbpUserLogins.sql" />
+    <Build Include="dbo\Tables\AbpUserRoles.sql" />
+    <Build Include="dbo\Tables\AbpSettings.sql" />
+    <Build Include="dbo\Tables\AbpTenantNotifications.sql" />
+    <Build Include="dbo\Tables\AbpTenants.sql" />
+    <Build Include="dbo\Tables\AbpUserAccounts.sql" />
+    <Build Include="dbo\Tables\AbpUserLoginAttempts.sql" />
+    <Build Include="dbo\Tables\AbpUserNotifications.sql" />
+    <Build Include="dbo\Tables\AbpUserOrganizationUnits.sql" />
+    <Build Include="dbo\Tables\__MigrationHistory.sql" />
+    <Build Include="dbo\Tables\ExchangeHoliday.sql" />
+    <Build Include="dbo\Stored Procedures\TestSP.sql" />
   </ItemGroup>
 </Project>
